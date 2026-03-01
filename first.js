@@ -11,8 +11,6 @@ function greet(){
 
     return meet;
 }
-
-
 const num = greet();
 num();
 

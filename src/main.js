@@ -1,18 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client"
 
-// Password: ABDBHJDVB , setPassword("ABDBHJDVB")
-// length:19 , setLength(19)
-// numberChanged = false , setnumberChanged(true)
-// charChanged = true , setcharChanged(true)
-
 function PasswordGenerator(){
 
    const [Password, setPassword] = useState("");
    const [length ,setLength] = useState(10);
    const [numberChanged, setnumberChanged] = useState(false);
    const [charChanged, setcharChanged] = useState(false);
-   
 
    const generatepassword = useCallback(()=>{
 
@@ -32,14 +26,9 @@ function PasswordGenerator(){
 
    },[length,charChanged,numberChanged]);
    
-
-
-
   useEffect(()=>{
      generatepassword();
   },[generatepassword])
-
-
    return(
       <>
         <h1>{Password}</h1>
@@ -56,7 +45,4 @@ function PasswordGenerator(){
       </>
    )
 }
-
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(<PasswordGenerator/>);
